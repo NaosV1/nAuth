@@ -1,0 +1,50 @@
+{
+  "appId": "com.nauth.app",
+  "productName": "nAuth",
+  "directories": {
+    "output": "release",
+    "buildResources": "build"
+  },
+  "files": [
+    "dist/**/*",
+    "electron/**/*",
+    "package.json"
+  ],
+  "extraMetadata": {
+    "main": "electron/main.js"
+  },
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64", "arm64"]
+      }
+    ],
+    "icon": "build/icon.ico"
+  },
+  "mac": {
+    "target": [
+      {
+        "target": "dmg",
+        "arch": ["x64", "arm64"]
+      }
+    ],
+    "icon": "build/icon.icns",
+    "category": "public.app-category.utilities",
+    "hardenedRuntime": true,
+    "gatekeeperAssess": false,
+    "entitlements": "build/entitlements.mac.plist",
+    "entitlementsInherit": "build/entitlements.mac.plist"
+  },
+  "linux": {
+    "target": ["AppImage", "deb"],
+    "icon": "build/icon.png",
+    "category": "Utility"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true
+  }
+}

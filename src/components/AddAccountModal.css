@@ -1,0 +1,137 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--spacing-lg);
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease;
+  border: 1px solid var(--color-border-light);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modal-header h2 {
+  margin: 0;
+}
+
+.btn-close {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  transition: color 0.15s ease;
+}
+
+.btn-close:hover {
+  color: var(--color-text);
+}
+
+.tabs {
+  display: flex;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-md) var(--spacing-xl);
+  background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.tab {
+  flex: 1;
+  padding: 10px var(--spacing-lg);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tab:hover {
+  color: var(--color-text);
+  background-color: var(--color-bg-card);
+}
+
+.tab-active {
+  color: var(--color-primary);
+  background-color: var(--color-bg-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-xl);
+}
+
+.qr-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.manual-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.manual-form small {
+  display: block;
+  margin-top: var(--spacing-xs);
+  font-size: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .modal-content {
+    max-width: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .modal-header,
+  .tabs,
+  .modal-body {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .tab {
+    font-size: 0.875rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}

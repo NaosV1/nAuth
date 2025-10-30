@@ -1,0 +1,119 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--color-bg);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px var(--spacing-2xl);
+  background-color: var(--color-bg-card);
+  border-bottom: 1px solid var(--color-border-light);
+  backdrop-filter: blur(10px);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.header-left h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.account-count {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-bg-tertiary);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.header-right {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.dashboard-content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-xl);
+}
+
+.toolbar {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.search-input {
+  flex: 1;
+  max-width: 400px;
+}
+
+.accounts-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-xs);
+}
+
+.accounts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: var(--spacing-md);
+  }
+
+  .header-left h1 {
+    font-size: 1.25rem;
+  }
+
+  .dashboard-content {
+    padding: var(--spacing-md);
+  }
+
+  .toolbar {
+    flex-direction: column;
+  }
+
+  .search-input {
+    max-width: 100%;
+  }
+
+  .accounts-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,153 @@
+.account-card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.account-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: var(--color-border);
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+}
+
+.account-info h3 {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text);
+}
+
+.account-name {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.btn-icon {
+  padding: var(--spacing-xs);
+  background: transparent;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  opacity: 0.6;
+  transition: all 0.15s ease;
+}
+
+.btn-icon:hover {
+  opacity: 1;
+  background-color: var(--color-bg-tertiary);
+}
+
+.account-code {
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+  margin-bottom: var(--spacing-lg);
+  cursor: pointer;
+  user-select: none;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  background-color: var(--color-bg-secondary);
+}
+
+.account-code:hover {
+  background-color: var(--color-primary-light);
+}
+
+.account-code:active {
+  transform: scale(0.98);
+}
+
+.code-display {
+  font-family: var(--font-mono);
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0.15em;
+  margin-bottom: var(--spacing-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.code-hint {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.account-footer {
+  margin-bottom: var(--spacing-md);
+}
+
+.timer {
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.timer-urgent {
+  color: var(--color-danger);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.progress-bar {
+  height: 3px;
+  background-color: var(--color-border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  transition: width 0.3s linear;
+  border-radius: 99px;
+}
+
+.hotp-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+}
+
+.account-badges {
+  display: flex;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+  border: 1px solid var(--color-border-light);
+}
+
+@media (max-width: 480px) {
+  .code-display {
+    font-size: 1.5rem;
+  }
+}

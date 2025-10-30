@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir /a \"C:\\Users\\naos\\Documents\\Dev\\nAuth\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
